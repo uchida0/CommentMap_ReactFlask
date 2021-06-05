@@ -3,18 +3,15 @@
 <br>
 
 <h2>概要</h2>
-<hr>
 <a href="https://github.com/uchida0/CommentMap">CommentMap</a>と機能的なところでは大きくは変わっていない。<br>
 Flaskだけで構成されていた物をFlaskをAPIとして用いる運用に変更している。
 
 <h2>サンプル</h2>
-<hr>
 <a href="https://review.kakaku.com/review/K0000695816/#tab">フロムザバレル(ウィスキー)のサンプル画像</a>
 <img src="whisky_sample.jpg">
 <br><br>
 
 <h2>使用技術など</h2>
-<hr>
 <h3>バックエンド</h3>
 <ul>
     <li>Python3
