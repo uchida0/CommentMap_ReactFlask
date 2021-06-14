@@ -1,0 +1,16 @@
+.comment-map-area{
+    display: flex;
+}
+
+.one-comment{
+    margin: 1rem;
+}
+
+.main-comment{
+    margin: 0 20rem 0 0;
+    flex-basis: 40%;
+}
+
+.comments{
+    flex-basis: 40%;
+}

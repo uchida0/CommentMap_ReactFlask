@@ -1,10 +1,12 @@
 //MainCommentとCommentをマップにして表示するやつ
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import LinkInput from "./LinkInput";
 import MainComment from "./MainComment";
 import Comment from "./Comment";
 import SellectComment from "./SellectComment";
+import "../Map.css";
 //import LeaderLine from "react-leader-line";
+import LeaderLine from "leader-line-new";
 
 
 const Map: React.FC = () => {
@@ -25,6 +27,9 @@ const Map: React.FC = () => {
     const [commentTitleList, setCommentTitleList] = useState(initialObject)
     const [commentTextList, setCommentTextList] = useState(initialObject)
 
+    const initialLinks: LeaderLine[] = []
+    const [links, setLinks] = useState(initialLinks)
+
 
     /*
     const ToComments = () => {
@@ -37,6 +42,33 @@ const Map: React.FC = () => {
         return comments;
     }
     */
+    let link: LeaderLine[] = []
+
+    useEffect(()=>{
+        //console.log(links.length)
+        if (links.length > 0){
+            console.log("links_lenght not 0")
+            links.filter(l => {
+                l.remove()
+            })
+        }
+
+        for (let key in commentTitleList){
+            let s = document.getElementById("c"+String(maincommentNumber))!;
+            let e = document.getElementById("c"+String(key))!;
+            //console.log(s)
+            //console.log(e)
+            if(s  && e){
+                link.push(
+                    new LeaderLine(s,e,{startSocket:"right", endSocket:"left"})
+                    )
+            }
+           }
+           setLinks(link)
+           console.log("linkの状態")
+           console.log(link)
+        
+    },[maincommentNumber, maincommentSellectedWord,commentTitleList,]);
 
 
 
@@ -61,8 +93,9 @@ const Map: React.FC = () => {
                 setMaincommentWords={setMaincommentWords} setMaincommentSellectedWord={setMaincommentSellectedWord}
                 setCommentTitleList={setCommentTitleList} setCommentTextList={setCommentTextList}
                 />
-                <h3>メインコメント</h3>
+                <div className="comment-map-area">
                 <div className="main-comment">
+                <h3>メインコメント</h3>
                 <MainComment url="http://127.0.0.1:5000/link/map/"
                 maincommentNumber={maincommentNumber}
                 maincommentWords={maincommentWords} maincommentSellectedWord={maincommentSellectedWord}
@@ -74,6 +107,7 @@ const Map: React.FC = () => {
                 setCommentTitleList={setCommentTitleList} setCommentTextList={setCommentTextList}
                 />
                 </div>
+                <div className="comments">
                 <h3>リンク先コメント</h3>
                 {(() =>{
                     let comments = [];
@@ -86,6 +120,9 @@ const Map: React.FC = () => {
                     }
                     return comments;
                 })()}
+                </div>
+                </div>
+
                 </div>
 
                 :

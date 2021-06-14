@@ -16,13 +16,8 @@
 
 .comment-area{
     width:auto;
-    margin: 200px, 200px;
     text-align: left;
     background-color: whitesmoke;
     padding: 0 0 0 0 ;
     border: 5px solid black;
-}
-
-.one-comment{
-    margin: 100px;
 }

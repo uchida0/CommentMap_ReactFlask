@@ -11,7 +11,7 @@ type Props = {
 
 const Comment: React.FC<Props> = ({commentNumber, commentTitle, commentText}) => {
     return(
-        <div className="comment-area">
+        <div className="comment-area" id={"c"+String(commentNumber)}>
             <div className="comment-number-area">
                 コメント番号：{commentNumber}
             </div>
