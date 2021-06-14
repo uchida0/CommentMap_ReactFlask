@@ -8,7 +8,7 @@ Flaskだけで構成されていた物をFlaskをAPIとして用いる運用に�
 
 <h2>サンプル</h2>
 <a href="https://review.kakaku.com/review/K0000695816/#tab">フロムザバレル(ウィスキー)のサンプル画像</a>
-<img src="whisky_sample.jpg">
+<img src="whisky_sample_leader_line_added.png">
 <br><br>
 
 <h2>使用技術など</h2>
